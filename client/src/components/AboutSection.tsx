@@ -1,89 +1,13 @@
 import { motion } from "framer-motion";
-import { Brain, Shield, TrendingUp } from "lucide-react";
-
-// Timeline data
-const timelineItems = [
-  {
-    year: "2019",
-    title: "Foundation",
-    description: "Vigora Tech was founded with a vision to democratize access to AI infrastructure for organizations of all sizes.",
-    isRight: true,
-  },
-  {
-    year: "2020",
-    title: "First Platform Release",
-    description: "Released Vigora Core 1.0, our flagship AI infrastructure platform enabling businesses to deploy machine learning models at scale.",
-    isRight: false,
-  },
-  {
-    year: "2021",
-    title: "Industry Expansion",
-    description: "Expanded our solutions to serve logistics, drone operations, and smart city infrastructure with specialized AI capabilities.",
-    isRight: true,
-  },
-  {
-    year: "2023",
-    title: "Next Generation Platform",
-    description: "Launched Vigora Core 3.0 with advanced compute capabilities, edge integration, and enhanced security features.",
-    isRight: false,
-  },
-];
-
-// Timeline item component
-const TimelineItem = ({ item, index }: { item: typeof timelineItems[0], index: number }) => {
-  const animationDelay = 0.1 + index * 0.1;
-  
-  return (
-    <div className="relative">
-      <div className="w-4 h-4 bg-secondary rounded-full absolute left-1/2 top-0 transform -translate-x-1/2 glow"></div>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        <motion.div 
-          className={`${item.isRight ? "md:text-right md:pr-12" : "md:pr-12 md:col-start-1"} ${item.isRight ? "" : "md:hidden"} card-hover`}
-          initial={{ opacity: 0, x: item.isRight ? -50 : 0 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: animationDelay }}
-        >
-          {item.isRight && (
-            <div className="p-6 bg-[#121219] rounded-xl border border-accent/20">
-              <h4 className="text-xl font-semibold mb-2">{item.year}</h4>
-              <h5 className="text-secondary mb-4">{item.title}</h5>
-              <p className="text-light-muted">{item.description}</p>
-            </div>
-          )}
-        </motion.div>
-        
-        <div className="md:hidden h-16"></div>
-        
-        <motion.div 
-          className={`${!item.isRight ? "md:pl-12" : "md:hidden"} card-hover`}
-          initial={{ opacity: 0, x: !item.isRight ? 50 : 0 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: animationDelay }}
-        >
-          {!item.isRight && (
-            <div className="p-6 bg-[#121219] rounded-xl border border-accent/20">
-              <h4 className="text-xl font-semibold mb-2">{item.year}</h4>
-              <h5 className="text-secondary mb-4">{item.title}</h5>
-              <p className="text-light-muted">{item.description}</p>
-            </div>
-          )}
-        </motion.div>
-      </div>
-    </div>
-  );
-};
+import { Brain, Shield, TrendingUp, Database, Wifi, Lock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-[#1A1A24] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="grid-background h-full"></div>
-      </div>
+    <section id="about" className="py-24 bg-[#080810] relative overflow-hidden">
+      <div className="absolute inset-0 mesh-primary"></div>
+      <div className="absolute inset-0 data-flow-bg opacity-30"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -95,86 +19,169 @@ export default function AboutSection() {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Mission Statement */}
+        <motion.div
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            We build the digital nervous system for drones, logistics, and infrastructure.
+          </h3>
+        </motion.div>
+        
+        {/* Company values */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="bg-[#0c0c14] p-8 rounded-xl border border-primary/20 card-hover animate-glow-pulse"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Our Mission</h3>
-            <p className="text-light-muted mb-6 leading-relaxed">
-              Vigora Tech is redefining the landscape of AI infrastructure through our commitment to building robust, scalable, and ethical systems that power the next generation of intelligent applications.
-            </p>
-            <p className="text-light-muted mb-6 leading-relaxed">
-              We believe that by creating the foundation for AI-driven solutions, we can help organizations across industries solve complex problems, optimize operations, and create unprecedented value.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 mt-8">
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                  <Brain className="h-6 w-6" />
-                </div>
-                <span className="ml-3 font-medium">Advanced AI Models</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                  <Shield className="h-6 w-6" />
-                </div>
-                <span className="ml-3 font-medium">Enterprise Security</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                  <TrendingUp className="h-6 w-6" />
-                </div>
-                <span className="ml-3 font-medium">Scalable Solutions</span>
-              </div>
+            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+              <Database className="h-8 w-8" />
             </div>
+            <h3 className="text-xl font-bold text-primary mb-3">AI-Native Design</h3>
+            <p className="text-light-muted text-sm">
+              Infrastructure built from the ground up specifically for AI workloads, with optimized compute, memory, and network paths.
+            </p>
           </motion.div>
           
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <motion.div
+            className="bg-[#0c0c14] p-8 rounded-xl border border-secondary/20 card-hover animate-glow-pulse"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="rounded-xl overflow-hidden shadow-2xl border border-accent/20 relative">
-              <img 
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="AI Infrastructure" 
-                className="w-full h-auto" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121219] to-transparent"></div>
+            <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-secondary mb-6">
+              <Lock className="h-8 w-8" />
             </div>
+            <h3 className="text-xl font-bold text-secondary mb-3">Security by Default</h3>
+            <p className="text-light-muted text-sm">
+              End-to-end encryption, access control, and regulatory compliance built into every layer of our platform.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            className="bg-[#0c0c14] p-8 rounded-xl border border-accent/20 card-hover animate-glow-pulse"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center text-accent mb-6">
+              <Wifi className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-accent mb-3">Scalability at Core</h3>
+            <p className="text-light-muted text-sm">
+              Designed to adapt from single device deployments to global fleets with consistent performance and reliability.
+            </p>
           </motion.div>
         </div>
         
-        {/* Timeline */}
-        <div className="mt-32">
-          <motion.h3 
-            className="text-2xl font-semibold mb-12 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Our Journey
-          </motion.h3>
-          
-          <div className="relative">
-            {/* Timeline connector */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 timeline-connector"></div>
-            
-            {/* Timeline items */}
-            <div className="space-y-24">
-              {timelineItems.map((item, index) => (
-                <TimelineItem key={item.year} item={item} index={index} />
-              ))}
+        {/* Server Rack Visual */}
+        <motion.div 
+          className="mb-24 relative mx-auto max-w-4xl"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="bg-[#0a0a12] rounded-xl overflow-hidden border border-primary/30 shadow-2xl">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=500" 
+                alt="Server infrastructure with neon highlights" 
+                className="w-full h-auto object-cover filter contrast-125" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080810] via-[#080810]/70 to-transparent"></div>
+              
+              {/* Glowing points */}
+              <div className="absolute left-1/4 top-1/3 w-2 h-2 rounded-full bg-primary glow animate-pulse-slow"></div>
+              <div className="absolute left-2/3 top-1/4 w-2 h-2 rounded-full bg-secondary glow animate-pulse-slow"></div>
+              <div className="absolute left-1/2 top-2/3 w-2 h-2 rounded-full bg-accent glow animate-pulse-slow"></div>
+              
+              {/* Connection lines */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+                <line x1="300" y1="165" x2="800" y2="125" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+                <line x1="300" y1="165" x2="600" y2="330" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+                <line x1="800" y1="125" x2="600" y2="330" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+              </svg>
             </div>
           </div>
+        </motion.div>
+        
+        {/* Leadership section */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="text-2xl font-semibold mb-2">Backed by Experts</h3>
+          <p className="text-light-muted max-w-2xl mx-auto">
+            Our team brings decades of experience from leading technology companies
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {/* Expert logos/icons */}
+          <motion.div
+            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <div className="text-center">
+              <div className="font-bold text-primary">Former Google AI</div>
+              <div className="text-xs text-light-muted">Research</div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <div className="text-center">
+              <div className="font-bold text-secondary">MIT</div>
+              <div className="text-xs text-light-muted">Computer Science</div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <div className="text-center">
+              <div className="font-bold text-accent">Tesla Autopilot</div>
+              <div className="text-xs text-light-muted">Engineers</div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+          >
+            <div className="text-center">
+              <div className="font-bold text-primary">NASA JPL</div>
+              <div className="text-xs text-light-muted">Robotics</div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

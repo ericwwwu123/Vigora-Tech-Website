@@ -1,50 +1,39 @@
 import { motion } from "framer-motion";
-import { Plane, Truck, Building2, Factory, ArrowRight, Check } from "lucide-react";
+import { Plane, Truck, Building2, ArrowRight, Eye, Map, Battery, BarChart, Network, Timer, Zap } from "lucide-react";
 
-// Solution card data
+// Solution card data - focused on 3 sectors only as requested
 const solutions = [
   {
     title: "Drone Operations",
     icon: <Plane className="text-primary" />,
     image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Intelligent fleet management, path optimization, and autonomous navigation for drone operations.",
-    features: [
-      "Real-time object detection",
-      "Autonomous navigation",
-      "Fleet coordination"
+    description: "Autonomous fleet management with real-time coordination and intelligent navigation.",
+    keyFeatures: [
+      { icon: <Eye className="text-secondary h-5 w-5" />, text: "Object detection & tracking" },
+      { icon: <Map className="text-secondary h-5 w-5" />, text: "Autonomous navigation" },
+      { icon: <Battery className="text-secondary h-5 w-5" />, text: "Power optimization" }
     ]
   },
   {
     title: "Smart Logistics",
     icon: <Truck className="text-primary" />,
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "End-to-end supply chain optimization with predictive analytics and automation.",
-    features: [
-      "Demand forecasting",
-      "Route optimization",
-      "Inventory management"
+    description: "Predictive supply chain optimization with AI-powered route planning and demand forecasting.",
+    keyFeatures: [
+      { icon: <BarChart className="text-secondary h-5 w-5" />, text: "Demand forecasting" },
+      { icon: <Map className="text-secondary h-5 w-5" />, text: "Route optimization" },
+      { icon: <Timer className="text-secondary h-5 w-5" />, text: "Just-in-time delivery" }
     ]
   },
   {
-    title: "Smart Cities",
+    title: "Urban Infrastructure",
     icon: <Building2 className="text-primary" />,
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Connected urban environments with intelligent monitoring and responsive infrastructure.",
-    features: [
-      "Traffic optimization",
-      "Energy management",
-      "Public safety systems"
-    ]
-  },
-  {
-    title: "Manufacturing",
-    icon: <Factory className="text-primary" />,
-    image: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Intelligent automation and predictive maintenance for Industry 4.0 operations.",
-    features: [
-      "Quality control",
-      "Predictive maintenance",
-      "Production optimization"
+    description: "Real-time monitoring and control systems for smarter, more efficient urban environments.",
+    keyFeatures: [
+      { icon: <Network className="text-secondary h-5 w-5" />, text: "Traffic management" },
+      { icon: <Zap className="text-secondary h-5 w-5" />, text: "Energy optimization" },
+      { icon: <Eye className="text-secondary h-5 w-5" />, text: "Public safety" }
     ]
   }
 ];
@@ -53,51 +42,53 @@ const solutions = [
 const SolutionCard = ({ solution, index }: { solution: typeof solutions[0], index: number }) => {
   return (
     <motion.div 
-      className="card-hover rounded-xl border border-accent/20 overflow-hidden bg-[#1A1A24]"
+      className="card-hover rounded-xl border border-primary/20 overflow-hidden bg-[#0c0c14]"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
+      transition={{ duration: 0.5, delay: 0.2 * index }}
     >
-      <div className="h-48 relative">
+      <div className="h-40 relative">
         <img 
           src={solution.image} 
           alt={solution.title} 
           className="w-full h-full object-cover" 
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121219] to-transparent"></div>
-      </div>
-      
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-3">
-          <h3 className="text-xl font-semibold">{solution.title}</h3>
-          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080810] to-transparent"></div>
+        
+        {/* Floating icon */}
+        <div className="absolute -bottom-6 right-6 w-14 h-14 rounded-full bg-[#0c0c14] border border-primary/20 flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
             {solution.icon}
           </div>
         </div>
+      </div>
+      
+      <div className="p-6 pt-8">
+        <h3 className="text-xl font-bold text-white mb-3">{solution.title}</h3>
+        <p className="text-light-muted text-sm mb-6">{solution.description}</p>
         
-        <p className="text-light-muted mb-4">{solution.description}</p>
-        
-        <ul className="space-y-2 mb-6">
-          {solution.features.map((feature, i) => (
-            <li key={i} className="flex items-center">
-              <Check className="h-4 w-4 text-secondary mr-2" />
-              <span className="text-sm">{feature}</span>
-            </li>
+        <div className="space-y-3 mb-6">
+          {solution.keyFeatures.map((feature, i) => (
+            <div key={i} className="flex items-center">
+              <div className="mr-3">{feature.icon}</div>
+              <span className="text-sm">{feature.text}</span>
+            </div>
           ))}
-        </ul>
+        </div>
         
-        <button 
+        <motion.button 
+          whileHover={{ x: 5 }}
           onClick={() => {
             const contactSection = document.getElementById('contact');
             if (contactSection) {
               contactSection.scrollIntoView({ behavior: 'smooth' });
             }
           }}
-          className="text-secondary hover:text-accent transition-colors text-sm font-medium flex items-center"
+          className="text-secondary hover:text-primary transition-colors text-sm font-medium flex items-center"
         >
           Learn More <ArrowRight className="ml-2 h-4 w-4" />
-        </button>
+        </motion.button>
       </div>
     </motion.div>
   );
@@ -105,32 +96,65 @@ const SolutionCard = ({ solution, index }: { solution: typeof solutions[0], inde
 
 export default function SolutionsSection() {
   return (
-    <section id="solutions" className="py-24 bg-[#121219] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid-background h-full"></div>
-      </div>
+    <section id="solutions" className="py-24 bg-[#080810] relative overflow-hidden">
+      {/* Animated background with grid and globe */}
+      <div className="absolute inset-0 mesh-accent opacity-70"></div>
+      <div className="absolute inset-0 data-flow-bg opacity-20"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Industry <span className="text-secondary">Solutions</span></h2>
-          <p className="text-light-muted max-w-2xl mx-auto">Our AI infrastructure powers innovation across multiple industries, providing intelligent solutions to complex challenges.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Industry-Ready <span className="text-secondary">AI Systems</span></h2>
+          <p className="text-light-muted max-w-2xl mx-auto text-sm">
+            For Physical World Operations
+          </p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4"></div>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* World map or globe visual */}
+        <motion.div 
+          className="mb-16 relative max-w-4xl mx-auto"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-primary/20 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400"
+              alt="Global AI network" 
+              className="w-full h-auto object-cover brightness-75" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080810] via-[#080810]/70 to-transparent"></div>
+            
+            {/* Connection points */}
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-primary glow animate-pulse-slow"></div>
+            <div className="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-secondary glow animate-pulse-slow"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-2 h-2 rounded-full bg-accent glow animate-pulse-slow"></div>
+            
+            {/* Connection lines */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+              <line x1="300" y1="100" x2="800" y2="133" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+              <line x1="300" y1="100" x2="900" y2="267" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+              <line x1="800" y1="133" x2="900" y2="267" stroke="rgba(0, 175, 255, 0.3)" strokeWidth="1" />
+            </svg>
+          </div>
+        </motion.div>
+        
+        {/* Solution cards - only 3 as requested */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {solutions.map((solution, index) => (
             <SolutionCard key={index} solution={solution} index={index} />
           ))}
         </div>
         
         <motion.div 
-          className="mt-16 text-center"
+          className="text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -145,7 +169,7 @@ export default function SolutionsSection() {
             }}
             className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300"
           >
-            Request a Custom Solution
+            Learn About Custom Solutions
           </button>
         </motion.div>
       </div>

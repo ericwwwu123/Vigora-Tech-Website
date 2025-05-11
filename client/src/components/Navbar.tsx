@@ -10,7 +10,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
       e.preventDefault();
       scrollToSection(href);
     }}
-    className="text-light hover:text-secondary transition-colors duration-300"
+    className="text-light hover:text-secondary transition-colors duration-300 text-sm font-medium"
   >
     {children}
   </a>
@@ -35,8 +35,10 @@ export default function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 border-b border-accent/20 transition-all duration-300",
-      scrolled ? "bg-[#121219]/90 backdrop-blur-md py-2" : "bg-transparent py-3"
+      "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
+      scrolled 
+        ? "bg-[#080810]/90 backdrop-blur-md py-2 border-primary/20" 
+        : "bg-transparent py-4 border-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
@@ -48,7 +50,7 @@ export default function Navbar() {
             }}
             className="flex items-center"
           >
-            <div className="text-3xl font-bold text-white tracking-tight flex items-center">
+            <div className="text-2xl font-bold text-white tracking-tight flex items-center">
               <span className="text-secondary glow-text">V</span>igora
               <span className="text-accent ml-1">Tech</span>
             </div>
@@ -70,9 +72,12 @@ export default function Navbar() {
               e.preventDefault();
               scrollToSection("contact");
             }}
-            className="hidden md:block px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded hover:glow transition-all duration-300"
+            className="hidden md:flex px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium rounded hover:glow transition-all duration-300 items-center"
           >
-            Get Started
+            <span>Get Started</span>
+            <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </a>
           
           {/* Mobile Menu Button */}
@@ -90,7 +95,7 @@ export default function Navbar() {
         
         {/* Mobile Menu */}
         <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"} mt-4 pb-4`}>
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-1 bg-[#0c0c14] rounded-md p-2">
             <a 
               href="#home"
               onClick={(e) => {
@@ -98,7 +103,7 @@ export default function Navbar() {
                 scrollToSection("home");
                 setMobileMenuOpen(false);
               }}
-              className="text-light hover:text-secondary transition-colors px-2 py-2"
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
             >
               Home
             </a>
@@ -109,7 +114,7 @@ export default function Navbar() {
                 scrollToSection("about");
                 setMobileMenuOpen(false);
               }}
-              className="text-light hover:text-secondary transition-colors px-2 py-2"
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
             >
               About Us
             </a>
@@ -120,7 +125,7 @@ export default function Navbar() {
                 scrollToSection("solutions");
                 setMobileMenuOpen(false);
               }}
-              className="text-light hover:text-secondary transition-colors px-2 py-2"
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
             >
               Solutions
             </a>
@@ -131,7 +136,7 @@ export default function Navbar() {
                 scrollToSection("platform");
                 setMobileMenuOpen(false);
               }}
-              className="text-light hover:text-secondary transition-colors px-2 py-2"
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
             >
               AI Platform
             </a>
@@ -142,7 +147,7 @@ export default function Navbar() {
                 scrollToSection("contact");
                 setMobileMenuOpen(false);
               }}
-              className="text-light hover:text-secondary transition-colors px-2 py-2"
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
             >
               Contact
             </a>
@@ -153,9 +158,12 @@ export default function Navbar() {
                 scrollToSection("contact");
                 setMobileMenuOpen(false);
               }}
-              className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded text-center"
+              className="mt-2 px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded text-center flex items-center justify-center"
             >
-              Get Started
+              <span>Get Started</span>
+              <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
           </div>
         </div>
