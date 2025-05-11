@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { scrollToSection } from "@/lib/utils";
+import vigoraLogo from "../assets/vigora-logo.svg";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
@@ -50,10 +51,7 @@ export default function Navbar() {
             }}
             className="flex items-center"
           >
-            <div className="text-2xl font-bold text-white tracking-tight flex items-center">
-              <span className="text-secondary glow-text">V</span>igora
-              <span className="text-accent ml-1">Tech</span>
-            </div>
+            <img src={vigoraLogo} alt="Vigora Tech Logo" className="h-8 mr-2" />
           </a>
           
           {/* Desktop Menu */}

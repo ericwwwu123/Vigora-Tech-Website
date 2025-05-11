@@ -1,232 +1,163 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Cpu, Shield, Rocket, TrendingUp, Network, Cog, Check } from "lucide-react";
+import { Cpu, Shield, Rocket, TrendingUp, Network, Cog } from "lucide-react";
 import { cn } from "@/lib/utils";
+import vigoraLogo from "../assets/vigora-logo.svg";
+import platformArchitecture from "../assets/platform-architecture.svg";
 
-// Feature details for interactive dots
-const featureDetails = [
-  {
-    id: "compute",
-    position: { top: "25%", left: "25%" },
-    color: "bg-primary",
-    title: "Advanced Compute",
-    description: "High-performance GPU clusters optimized for AI workloads"
-  },
-  {
-    id: "security",
-    position: { top: "33%", right: "33%" },
-    color: "bg-secondary",
-    title: "Enterprise Security",
-    description: "End-to-end encryption and access controls for sensitive data"
-  },
-  {
-    id: "deployment",
-    position: { bottom: "33%", left: "33%" },
-    color: "bg-accent",
-    title: "Seamless Deployment",
-    description: "One-click model deployment with automated scaling"
-  },
-  {
-    id: "analytics",
-    position: { bottom: "25%", right: "25%" },
-    color: "bg-green-500",
-    title: "Real-time Analytics",
-    description: "Comprehensive monitoring and performance dashboards"
-  }
-];
-
-// Platform features data
+// Platform features data - simplified to 6 cards with brief descriptions
 const platformFeatures = [
   {
-    icon: <Cpu className="text-primary text-2xl" />,
+    icon: <Cpu className="text-primary h-6 w-6" />,
     title: "Advanced Compute",
-    description: "High-performance computing infrastructure optimized for machine learning and AI workloads.",
-    features: [
-      "GPU and TPU acceleration",
-      "Distributed training",
-      "Automatic scaling"
-    ],
-    bgColor: "bg-primary/20"
+    description: "High-performance GPU/TPU clusters optimized for AI workloads with automatic scaling and distributed training.",
+    bgColor: "bg-primary/10",
+    borderColor: "border-primary/20",
+    delay: 0.1
   },
   {
-    icon: <Shield className="text-secondary text-2xl" />,
+    icon: <Shield className="text-secondary h-6 w-6" />,
     title: "Enterprise Security",
-    description: "Comprehensive security measures to protect sensitive data and models throughout their lifecycle.",
-    features: [
-      "End-to-end encryption",
-      "Role-based access control",
-      "Audit logging"
-    ],
-    bgColor: "bg-secondary/20"
+    description: "End-to-end encryption with role-based access controls and comprehensive audit logging for regulatory compliance.",
+    bgColor: "bg-secondary/10",
+    borderColor: "border-secondary/20",
+    delay: 0.2
   },
   {
-    icon: <Rocket className="text-accent text-2xl" />,
+    icon: <Rocket className="text-accent h-6 w-6" />,
     title: "Seamless Deployment",
-    description: "Streamlined workflows for deploying models from development to production with minimal friction.",
-    features: [
-      "One-click deployment",
-      "Version control",
-      "CI/CD integration"
-    ],
-    bgColor: "bg-accent/20"
+    description: "One-click model deployment with version control, CI/CD integration, and automated rollback functionality.",
+    bgColor: "bg-accent/10",
+    borderColor: "border-accent/20",
+    delay: 0.3
   },
   {
-    icon: <TrendingUp className="text-green-500 text-2xl" />,
+    icon: <TrendingUp className="text-green-500 h-6 w-6" />,
     title: "Real-time Analytics",
-    description: "Comprehensive monitoring and analytics to track performance and optimize AI systems.",
-    features: [
-      "Performance dashboards",
-      "Anomaly detection",
-      "Custom reporting"
-    ],
-    bgColor: "bg-green-500/20"
+    description: "Comprehensive performance dashboards with anomaly detection and customizable reporting for model monitoring.",
+    bgColor: "bg-green-500/10",
+    borderColor: "border-green-500/20",
+    delay: 0.4
   },
   {
-    icon: <Network className="text-primary text-2xl" />,
+    icon: <Network className="text-primary h-6 w-6" />,
     title: "Edge Integration",
-    description: "Extend AI capabilities to edge devices with optimized models and secure connectivity.",
-    features: [
-      "Model optimization",
-      "Secure edge communication",
-      "Offline capabilities"
-    ],
-    bgColor: "bg-primary/20"
+    description: "Optimized models for edge devices with secure communication channels and offline processing capabilities.",
+    bgColor: "bg-primary/10",
+    borderColor: "border-primary/20",
+    delay: 0.5
   },
   {
-    icon: <Cog className="text-secondary text-2xl" />,
+    icon: <Cog className="text-secondary h-6 w-6" />,
     title: "API Ecosystem",
-    description: "Extensive API ecosystem for seamless integration with existing systems and custom applications.",
-    features: [
-      "RESTful and GraphQL APIs",
-      "Custom integrations",
-      "Webhooks and callbacks"
-    ],
-    bgColor: "bg-secondary/20"
+    description: "Extensive REST and GraphQL APIs with webhook support and customizable integration options for any system.",
+    bgColor: "bg-secondary/10",
+    borderColor: "border-secondary/20",
+    delay: 0.6
   }
 ];
 
-// Feature card component
-const FeatureCard = ({ feature, index }: { feature: typeof platformFeatures[0], index: number }) => {
+// Feature card component - simplified with cleaner design
+const FeatureCard = ({ feature }: { feature: typeof platformFeatures[0] }) => {
   return (
     <motion.div 
-      className="p-6 rounded-xl border border-accent/20 bg-[#121219] card-hover"
+      className={cn(
+        "p-6 rounded-xl border bg-[#0c0c14] card-hover h-full", 
+        feature.borderColor
+      )}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
+      transition={{ duration: 0.5, delay: feature.delay }}
     >
-      <div className={cn("w-14 h-14 rounded-full flex items-center justify-center mb-4", feature.bgColor)}>
+      <div className={cn("w-12 h-12 rounded-full flex items-center justify-center mb-4", feature.bgColor)}>
         {feature.icon}
       </div>
       
-      <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-      <p className="text-light-muted">{feature.description}</p>
-      
-      <ul className="mt-4 space-y-2">
-        {feature.features.map((item, i) => (
-          <li key={i} className="flex items-center">
-            <Check className="text-secondary mr-2 h-5 w-5" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+      <p className="text-light-muted text-sm">{feature.description}</p>
     </motion.div>
   );
 };
 
 export default function PlatformSection() {
-  const [activeFeature, setActiveFeature] = useState<string | null>(null);
-
   return (
-    <section id="platform" className="py-24 bg-[#1A1A24] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="grid-background h-full"></div>
-      </div>
+    <section id="platform" className="py-24 bg-[#080810] relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 mesh-primary opacity-70"></div>
+      <div className="absolute inset-0 data-flow-bg opacity-20"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Logo and section header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Vigora <span className="text-secondary">Core</span> Platform</h2>
-          <p className="text-light-muted max-w-2xl mx-auto">Our flagship AI infrastructure platform designed for enterprise-grade performance, security, and scalability.</p>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4"></div>
+          <img 
+            src={vigoraLogo} 
+            alt="Vigora Tech Logo" 
+            className="h-16 mx-auto mb-6"
+          />
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Vigora <span className="text-secondary">Core</span> Platform</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-2"></div>
         </motion.div>
         
-        {/* Platform Visualization */}
-        <motion.div 
-          className="relative mb-20"
+        {/* Tagline */}
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className="text-xl text-light-muted italic max-w-2xl mx-auto">
+            Built for performance, resilience, and scale
+          </p>
+        </motion.div>
+        
+        {/* Platform Architecture Diagram */}
+        <motion.div 
+          className="mb-20 max-w-4xl mx-auto"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="rounded-xl overflow-hidden border border-accent/20 shadow-2xl relative">
+          <div className="rounded-xl overflow-hidden border border-primary/20 shadow-2xl bg-[#0a0a14]">
             <img 
-              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=500" 
-              alt="Vigora Core Platform" 
+              src={platformArchitecture} 
+              alt="Vigora Core Platform Architecture" 
               className="w-full h-auto" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121219] via-[#121219]/80 to-transparent"></div>
-            
-            {/* Interactive feature dots */}
-            {featureDetails.map((feature) => (
-              <div 
-                key={feature.id}
-                className={cn("absolute w-6 h-6 rounded-full", feature.color, "glow pulse-dot cursor-pointer z-20")}
-                style={{ ...feature.position }}
-                onClick={() => setActiveFeature(feature.id)}
-              ></div>
-            ))}
-            
-            {/* Feature popup */}
-            {activeFeature && (
-              <div className="absolute inset-0 flex items-center justify-center z-30">
-                <motion.div 
-                  className="bg-[#121219]/90 backdrop-blur-sm p-6 rounded-xl border border-accent/30 max-w-md"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                >
-                  <h3 className="text-xl font-semibold mb-2 text-secondary">
-                    {featureDetails.find(f => f.id === activeFeature)?.title}
-                  </h3>
-                  <p className="text-light-muted mb-4">
-                    {featureDetails.find(f => f.id === activeFeature)?.description}
-                  </p>
-                  <button 
-                    className="px-4 py-2 bg-secondary/20 hover:bg-secondary/30 text-secondary rounded-md transition-colors"
-                    onClick={() => setActiveFeature(null)}
-                  >
-                    Close
-                  </button>
-                </motion.div>
-              </div>
-            )}
           </div>
         </motion.div>
         
-        {/* Platform Features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {platformFeatures.map((feature, index) => (
-            <FeatureCard key={index} feature={feature} index={index} />
-          ))}
+        {/* Platform Features - 2 rows x 3 cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {/* First row */}
+          <FeatureCard feature={platformFeatures[0]} />
+          <FeatureCard feature={platformFeatures[1]} />
+          <FeatureCard feature={platformFeatures[2]} />
+          
+          {/* Second row */}
+          <FeatureCard feature={platformFeatures[3]} />
+          <FeatureCard feature={platformFeatures[4]} />
+          <FeatureCard feature={platformFeatures[5]} />
         </div>
         
         {/* CTA */}
         <motion.div 
-          className="mt-16 text-center"
+          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <div className="inline-block bg-[#121219] p-8 rounded-xl border border-accent/20">
-            <h3 className="text-2xl font-semibold mb-4">Ready to transform your operations with AI?</h3>
-            <p className="text-light-muted mb-6">Schedule a demo to see Vigora Core in action and discuss your specific requirements.</p>
+          <div className="inline-block bg-[#0c0c14] p-8 rounded-xl border border-primary/20 shadow-lg max-w-2xl">
+            <h3 className="text-2xl font-bold mb-4">Enterprise-Grade AI Infrastructure</h3>
+            <p className="text-light-muted mb-6 text-sm">Explore how Vigora Core can accelerate your AI initiatives with unmatched performance and security.</p>
             <button
               onClick={() => {
                 const contactSection = document.getElementById('contact');
@@ -234,9 +165,12 @@ export default function PlatformSection() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300"
             >
-              Request a Demo
+              <span>Request a Demo</span>
+              <svg className="ml-2 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </button>
           </div>
         </motion.div>
