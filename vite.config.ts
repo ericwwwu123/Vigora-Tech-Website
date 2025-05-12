@@ -34,6 +34,16 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, "client", "index.html"),
       },
+      output: {
+        format: 'esm',
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
     },
+    chunkSizeWarningLimit: 1000,
+  },
+  optimizeDeps: {
+    include: ['lightningcss'],
   },
 });

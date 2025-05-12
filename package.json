@@ -97,6 +97,7 @@
     "cross-env": "^7.0.3",
     "drizzle-kit": "^0.30.4",
     "esbuild": "^0.25.0",
+    "lightningcss": "^1.30.0",
     "postcss": "^8.4.47",
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17",
