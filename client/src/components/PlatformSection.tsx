@@ -9,47 +9,47 @@ const platformFeatures = [
   {
     icon: <Cpu className="text-primary h-6 w-6" />,
     title: "Smart Processing",
-    description: "Efficient AI algorithms that run on standard hardware, making advanced capabilities accessible without specialized equipment.",
+    description: "Lightweight models optimized for standard devices — no expensive clusters required.",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
     delay: 0.1
   },
   {
     icon: <Shield className="text-secondary h-6 w-6" />,
-    title: "Built-in Privacy",
-    description: "Privacy-preserving design that processes data locally when possible and provides strong protection without complex setup.",
+    title: "Local Privacy by Default",
+    description: "On-device processing and edge encryption reduce data exposure risks.",
     bgColor: "bg-secondary/10",
     borderColor: "border-secondary/20",
     delay: 0.2
   },
   {
     icon: <Rocket className="text-accent h-6 w-6" />,
-    title: "Quick Setup",
-    description: "Get started in minutes with simple installation that works out of the box, eliminating lengthy configuration processes.",
+    title: "Setup in Minutes",
+    description: "Deploy to the field with one-click installers and intuitive config.",
     bgColor: "bg-accent/10",
     borderColor: "border-accent/20",
     delay: 0.3
   },
   {
     icon: <TrendingUp className="text-green-500 h-6 w-6" />,
-    title: "Clear Insights",
-    description: "Simple visualization tools that show you what's happening in real-time and help you understand system performance.",
+    title: "Clear Operational Insights",
+    description: "Know what your system is doing — real-time visualization out of the box.",
     bgColor: "bg-green-500/10",
     borderColor: "border-green-500/20",
     delay: 0.4
   },
   {
     icon: <Network className="text-primary h-6 w-6" />,
-    title: "Works Offline",
-    description: "AI that keeps working even when internet connections are spotty or unavailable, perfect for remote operations.",
+    title: "Connects Anywhere",
+    description: "Run offline when networks are down, sync when back online.",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
     delay: 0.5
   },
   {
     icon: <Cog className="text-secondary h-6 w-6" />,
-    title: "Easy Integration",
-    description: "Simple tools to connect with your existing systems and devices without requiring specialized technical knowledge.",
+    title: "Plug into What You Already Use",
+    description: "Connect via simple APIs, webhooks, or native modules — no devops needed.",
     bgColor: "bg-secondary/10",
     borderColor: "border-secondary/20",
     delay: 0.6
@@ -113,7 +113,7 @@ export default function PlatformSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-xl text-light-muted italic max-w-2xl mx-auto">
-            Simple, reliable, and adaptable
+            Lightweight infrastructure with essential AI capabilities for small teams
           </p>
         </motion.div>
         
@@ -156,8 +156,8 @@ export default function PlatformSection() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="inline-block bg-[#0c0c14] p-8 rounded-xl border border-primary/20 shadow-lg max-w-2xl">
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-            <p className="text-light-muted mb-6 text-sm">Let's discuss how our lightweight AI can solve your specific challenges with minimal overhead.</p>
+            <h3 className="text-2xl font-bold mb-4">Built for Real-World Applications</h3>
+            <p className="text-light-muted mb-6 text-sm">Deploy real-time intelligence into your systems while keeping it simple, accessible, and cost-effective.</p>
             <button
               onClick={() => {
                 const contactSection = document.getElementById('contact');
