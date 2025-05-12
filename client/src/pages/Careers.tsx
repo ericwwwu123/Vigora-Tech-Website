@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Briefcase, Users, Globe, Calendar, Zap, Coffee, Star } from "lucide-react";
+import { ArrowRight, Briefcase, Users, Globe, Calendar, Zap, Coffee, Star, Home } from "lucide-react";
 import { Link } from "wouter";
 
 // Job listing card component
@@ -118,6 +118,20 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Navigation Bar */}
+      <div className="fixed top-0 left-0 right-0 bg-[#080810]/80 backdrop-blur-sm z-50 border-b border-primary/20">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/">
+              <a className="flex items-center space-x-2 text-white hover:text-primary transition-colors">
+                <Home className="h-5 w-5" />
+                <span>返回首页</span>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="section-spacing relative overflow-hidden bg-[#080810]">
         <div className="absolute inset-0 mesh-primary opacity-50"></div>

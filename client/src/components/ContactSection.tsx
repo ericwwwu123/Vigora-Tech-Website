@@ -246,27 +246,27 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Our Office</h4>
-                    <p className="text-light-muted">123 Innovation Way<br />San Francisco, CA 94105</p>
+                    <p className="text-light-muted">180 Friendship St<br />Providence, RI, 02903</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-4 mt-1">
-                    <Mail className="text-secondary h-5 w-5" />
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4 mt-1">
+                    <Mail className="text-primary h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-light-muted">info@vigoratech.com<br />support@vigoratech.com</p>
+                    <p className="text-light-muted">VigoraTech@hotmail.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mr-4 mt-1">
-                    <Phone className="text-accent h-5 w-5" />
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4 mt-1">
+                    <Phone className="text-primary h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-light-muted">+1 (555) 123-4567<br />+1 (555) 987-6543</p>
+                    <p className="text-light-muted">+1 (650) 727-4608</p>
                   </div>
                 </div>
               </div>

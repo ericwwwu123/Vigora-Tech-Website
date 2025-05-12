@@ -98,7 +98,7 @@ export default function PlatformSection() {
           <img 
             src={vigoraLogo} 
             alt="Vigora Tech Logo" 
-            className="h-40 w-auto object-contain mx-auto mb-6"
+            className="h-48 w-auto object-contain mx-auto mb-6"
           />
           <h2 className="text-3xl md:text-4xl font-bold mb-2">Our <span className="text-secondary">Core</span> Technology</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-2"></div>
