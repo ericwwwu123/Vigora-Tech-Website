@@ -1,0 +1,28 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bird outline with soft glow effect -->
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="3" result="blur" />
+    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+  </filter>
+  
+  <!-- Background glow -->
+  <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.3" />
+    <stop offset="100%" stop-color="#00455a" stop-opacity="0" />
+  </radialGradient>
+  
+  <!-- Background glow -->
+  <circle cx="200" cy="180" r="150" fill="url(#bgGradient)" />
+  
+  <!-- Bird path -->
+  <path d="M237 135c7.5-7.5 25-25 37.5-22.5s17.5 15 12.5 25-20 17.5-30 15-15-5-15-5m0 0c-5-2.5-15-5-25 0s-20 15-40 17.5-42.5-2.5-62.5-15-25-25-20-32.5 22.5-5 40 2.5 35 17.5 45 17.5 15-7.5 15-7.5m0 0c0 0-5-7.5-5-15s5-17.5 15-25 25-12.5 37.5-10 17.5 12.5 17.5 12.5m-130 78.75c17.5 10 55 22.5 67.5 22.5s17.5-2.5 17.5-2.5m0 0c0 0 0 7.5-5 15s-17.5 17.5-30 20-25-2.5-25-2.5m-32.5-63.75c-10 2.5-25 5-32.5 0s-10-15-5-22.5 17.5-10 30-7.5 15 7.5 15 7.5" 
+        stroke="#00e5ff" 
+        stroke-width="2" 
+        fill="none" 
+        filter="url(#glow)" />
+  
+  <!-- Text with glow effect -->
+  <text x="125" y="300" font-family="Arial, sans-serif" font-size="42" font-weight="bold" stroke="#00e5ff" stroke-width="1" fill="none" filter="url(#glow)">
+    VIGORA TECH
+  </text>
+</svg>
