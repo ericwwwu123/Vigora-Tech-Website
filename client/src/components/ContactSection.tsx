@@ -144,6 +144,7 @@ export default function ContactSection() {
                           <FormLabel>Email Address</FormLabel>
                           <FormControl>
                             <Input
+                              type="email"
                               placeholder="your.email@example.com"
                               className="w-full px-4 py-2 rounded-md bg-[#121219] border border-accent/20 text-light focus:border-secondary focus:outline-none transition-colors"
                               {...field}
@@ -187,9 +188,9 @@ export default function ContactSection() {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="general">General Inquiry</SelectItem>
-                            <SelectItem value="demo">Request a Demo</SelectItem>
-                            <SelectItem value="pricing">Pricing Information</SelectItem>
-                            <SelectItem value="custom">Custom Solution</SelectItem>
+                            <SelectItem value="support">Technical Support</SelectItem>
+                            <SelectItem value="partnership">Partnership</SelectItem>
+                            <SelectItem value="careers">Careers</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -246,7 +247,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Our Office</h4>
-                    <p className="text-light-muted">123 Innovation Way<br />San Francisco, CA 94105</p>
+                    <p className="text-light-muted">180 Friendship St<br />Providence, RI, 02903</p>
                   </div>
                 </div>
                 
@@ -256,7 +257,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-light-muted">info@vigoratech.com<br />support@vigoratech.com</p>
+                    <p className="text-light-muted">VigoraTech@hotmail.com</p>
                   </div>
                 </div>
                 
@@ -266,51 +267,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-light-muted">+1 (555) 123-4567<br />+1 (555) 987-6543</p>
+                    <p className="text-light-muted">+1 (650)727-4608</p>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            {/* Global Presence Map */}
-            <motion.div 
-              className="bg-[#1A1A24] p-8 rounded-xl border border-accent/20 shadow-xl"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3 className="text-xl font-semibold mb-6">Our Focus Areas</h3>
-              
-              <div className="relative rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
-                  alt="Technology focus areas" 
-                  className="w-full h-auto" 
-                />
-                <div className="absolute inset-0 bg-[#121219]/60"></div>
-                
-                {/* Location markers */}
-                <div className="absolute top-1/3 left-1/4 w-3 h-3 rounded-full bg-secondary glow"></div>
-                <div className="absolute top-1/4 left-1/2 w-3 h-3 rounded-full bg-secondary glow"></div>
-                <div className="absolute top-2/3 left-3/4 w-3 h-3 rounded-full bg-secondary glow"></div>
-                <div className="absolute top-1/2 left-1/5 w-3 h-3 rounded-full bg-secondary glow"></div>
-              </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">                
-                <div className="text-center">
-                  <div className="text-xl font-bold text-secondary">Drones</div>
-                  <div className="text-sm text-light-muted">& Robotics</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="text-xl font-bold text-secondary">Logistics</div>
-                  <div className="text-sm text-light-muted">& Transport</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="text-xl font-bold text-secondary">Smart Cities</div>
-                  <div className="text-sm text-light-muted">& Infrastructure</div>
                 </div>
               </div>
             </motion.div>
