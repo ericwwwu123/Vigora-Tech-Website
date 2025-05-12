@@ -109,9 +109,9 @@ export default function SolutionsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Industry-Ready <span className="text-secondary">AI Systems</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">How We Help <span className="text-secondary">Real-World Operations</span></h2>
           <p className="text-light-muted max-w-2xl mx-auto text-sm">
-            For Physical World Operations
+            Simple AI solutions for everyday challenges
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4"></div>
         </motion.div>
@@ -169,7 +169,7 @@ export default function SolutionsSection() {
             }}
             className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300"
           >
-            Learn About Custom Solutions
+            Talk to Our Team
           </button>
         </motion.div>
       </div>

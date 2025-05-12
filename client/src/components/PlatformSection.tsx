@@ -8,48 +8,48 @@ import platformArchitecture from "../assets/platform-architecture.svg";
 const platformFeatures = [
   {
     icon: <Cpu className="text-primary h-6 w-6" />,
-    title: "Advanced Compute",
-    description: "High-performance GPU/TPU clusters optimized for AI workloads with automatic scaling and distributed training.",
+    title: "Smart Processing",
+    description: "Efficient AI algorithms that run on standard hardware, making advanced capabilities accessible without specialized equipment.",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
     delay: 0.1
   },
   {
     icon: <Shield className="text-secondary h-6 w-6" />,
-    title: "Enterprise Security",
-    description: "End-to-end encryption with role-based access controls and comprehensive audit logging for regulatory compliance.",
+    title: "Built-in Privacy",
+    description: "Privacy-preserving design that processes data locally when possible and provides strong protection without complex setup.",
     bgColor: "bg-secondary/10",
     borderColor: "border-secondary/20",
     delay: 0.2
   },
   {
     icon: <Rocket className="text-accent h-6 w-6" />,
-    title: "Seamless Deployment",
-    description: "One-click model deployment with version control, CI/CD integration, and automated rollback functionality.",
+    title: "Quick Setup",
+    description: "Get started in minutes with simple installation that works out of the box, eliminating lengthy configuration processes.",
     bgColor: "bg-accent/10",
     borderColor: "border-accent/20",
     delay: 0.3
   },
   {
     icon: <TrendingUp className="text-green-500 h-6 w-6" />,
-    title: "Real-time Analytics",
-    description: "Comprehensive performance dashboards with anomaly detection and customizable reporting for model monitoring.",
+    title: "Clear Insights",
+    description: "Simple visualization tools that show you what's happening in real-time and help you understand system performance.",
     bgColor: "bg-green-500/10",
     borderColor: "border-green-500/20",
     delay: 0.4
   },
   {
     icon: <Network className="text-primary h-6 w-6" />,
-    title: "Edge Integration",
-    description: "Optimized models for edge devices with secure communication channels and offline processing capabilities.",
+    title: "Works Offline",
+    description: "AI that keeps working even when internet connections are spotty or unavailable, perfect for remote operations.",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
     delay: 0.5
   },
   {
     icon: <Cog className="text-secondary h-6 w-6" />,
-    title: "API Ecosystem",
-    description: "Extensive REST and GraphQL APIs with webhook support and customizable integration options for any system.",
+    title: "Easy Integration",
+    description: "Simple tools to connect with your existing systems and devices without requiring specialized technical knowledge.",
     bgColor: "bg-secondary/10",
     borderColor: "border-secondary/20",
     delay: 0.6
@@ -100,7 +100,7 @@ export default function PlatformSection() {
             alt="Vigora Tech Logo" 
             className="h-16 mx-auto mb-6"
           />
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Vigora <span className="text-secondary">Core</span> Platform</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Our <span className="text-secondary">Core</span> Technology</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-2"></div>
         </motion.div>
         
