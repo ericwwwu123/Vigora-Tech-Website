@@ -125,7 +125,7 @@ export default function Careers() {
             <Link href="/">
               <a className="flex items-center space-x-2 text-white hover:text-primary transition-colors">
                 <Home className="h-5 w-5" />
-                <span>返回首页</span>
+                <span>Back to homepage</span>
               </a>
             </Link>
           </div>
