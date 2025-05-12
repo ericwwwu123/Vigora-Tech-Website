@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { scrollToSection } from "@/lib/utils";
+import { Link } from "wouter";
 import vigoraLogo from "../assets/vigora-logo.svg";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -61,6 +62,9 @@ export default function Navbar() {
             <NavLink href="solutions">Solutions</NavLink>
             <NavLink href="platform">AI Platform</NavLink>
             <NavLink href="contact">Contact</NavLink>
+            <Link href="/careers" className="text-light hover:text-secondary transition-colors duration-300 text-sm font-medium">
+              Careers
+            </Link>
           </div>
           
           {/* CTA Button */}
@@ -149,6 +153,13 @@ export default function Navbar() {
             >
               Contact
             </a>
+            <Link 
+              href="/careers" 
+              className="text-light hover:text-secondary transition-colors px-4 py-3 rounded hover:bg-primary/10"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
             <a 
               href="#contact"
               onClick={(e) => {
