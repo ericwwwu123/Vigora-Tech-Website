@@ -113,7 +113,7 @@ export default function PlatformSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-xl text-light-muted italic max-w-2xl mx-auto">
-            Built for performance, resilience, and scale
+            Simple, reliable, and adaptable
           </p>
         </motion.div>
         
@@ -156,8 +156,8 @@ export default function PlatformSection() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="inline-block bg-[#0c0c14] p-8 rounded-xl border border-primary/20 shadow-lg max-w-2xl">
-            <h3 className="text-2xl font-bold mb-4">Enterprise-Grade AI Infrastructure</h3>
-            <p className="text-light-muted mb-6 text-sm">Explore how Vigora Core can accelerate your AI initiatives with unmatched performance and security.</p>
+            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+            <p className="text-light-muted mb-6 text-sm">Let's discuss how our lightweight AI can solve your specific challenges with minimal overhead.</p>
             <button
               onClick={() => {
                 const contactSection = document.getElementById('contact');
@@ -167,7 +167,7 @@ export default function PlatformSection() {
               }}
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300"
             >
-              <span>Request a Demo</span>
+              <span>Schedule a Chat</span>
               <svg className="ml-2 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

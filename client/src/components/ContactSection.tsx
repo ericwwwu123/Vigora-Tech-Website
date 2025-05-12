@@ -82,8 +82,8 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in <span className="text-secondary">Touch</span></h2>
-          <p className="text-light-muted max-w-2xl mx-auto">Have questions about our platform or solutions? Reach out to our team for more information.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact <span className="text-secondary">Us</span></h2>
+          <p className="text-light-muted max-w-2xl mx-auto">Curious about how our technology could help you? We'd love to hear from you.</p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4"></div>
         </motion.div>
         
@@ -96,7 +96,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+            <h3 className="text-xl font-semibold mb-6">Tell Us About Your Project</h3>
             
             {submitted ? (
               <div className="text-center py-8">
@@ -237,7 +237,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6">How to Reach Us</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -245,8 +245,8 @@ export default function ContactSection() {
                     <MapPin className="text-primary h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Headquarters</h4>
-                    <p className="text-light-muted">1234 Tech Parkway, Suite 500<br />San Francisco, CA 94105</p>
+                    <h4 className="font-medium mb-1">Our Office</h4>
+                    <p className="text-light-muted">123 Innovation Way<br />San Francisco, CA 94105</p>
                   </div>
                 </div>
                 
@@ -280,12 +280,12 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h3 className="text-xl font-semibold mb-6">Global Presence</h3>
+              <h3 className="text-xl font-semibold mb-6">Our Focus Areas</h3>
               
               <div className="relative rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
-                  alt="Global Presence Map" 
+                  alt="Technology focus areas" 
                   className="w-full h-auto" 
                 />
                 <div className="absolute inset-0 bg-[#121219]/60"></div>
@@ -297,25 +297,20 @@ export default function ContactSection() {
                 <div className="absolute top-1/2 left-1/5 w-3 h-3 rounded-full bg-secondary glow"></div>
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">                
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">4</div>
-                  <div className="text-sm text-light-muted">Global Offices</div>
+                  <div className="text-xl font-bold text-secondary">Drones</div>
+                  <div className="text-sm text-light-muted">& Robotics</div>
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">24</div>
-                  <div className="text-sm text-light-muted">Countries</div>
+                  <div className="text-xl font-bold text-secondary">Logistics</div>
+                  <div className="text-sm text-light-muted">& Transport</div>
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">200+</div>
-                  <div className="text-sm text-light-muted">Clients</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">24/7</div>
-                  <div className="text-sm text-light-muted">Support</div>
+                  <div className="text-xl font-bold text-secondary">Smart Cities</div>
+                  <div className="text-sm text-light-muted">& Infrastructure</div>
                 </div>
               </div>
             </motion.div>
