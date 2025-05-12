@@ -1,6 +1,7 @@
 import { scrollToSection } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Globe, Users, Server } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -101,7 +102,11 @@ export default function Footer() {
                   About Us
                 </button>
               </li>
-              <li><a href="#" className="text-light-muted hover:text-secondary transition-colors">Careers</a></li>
+              <li>
+                <Link href="/" className="text-light-muted hover:text-secondary transition-colors">
+                  Careers
+                </Link>
+              </li>
               <li><a href="#" className="text-light-muted hover:text-secondary transition-colors">News & Blog</a></li>
               <li>
                 <button
