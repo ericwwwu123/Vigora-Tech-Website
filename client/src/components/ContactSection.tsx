@@ -69,7 +69,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#121219] relative overflow-hidden">
+    <section id="contact" className="section-spacing bg-[#121219] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="grid-background h-full"></div>
       </div>

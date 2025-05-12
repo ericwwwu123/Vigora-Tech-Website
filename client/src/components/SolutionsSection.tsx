@@ -96,7 +96,7 @@ const SolutionCard = ({ solution, index }: { solution: typeof solutions[0], inde
 
 export default function SolutionsSection() {
   return (
-    <section id="solutions" className="py-24 bg-[#080810] relative overflow-hidden">
+    <section id="solutions" className="section-spacing bg-[#080810] relative overflow-hidden">
       {/* Animated background with grid and globe */}
       <div className="absolute inset-0 mesh-accent opacity-70"></div>
       <div className="absolute inset-0 data-flow-bg opacity-20"></div>

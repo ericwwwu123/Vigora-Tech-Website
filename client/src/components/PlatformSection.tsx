@@ -81,7 +81,7 @@ const FeatureCard = ({ feature }: { feature: typeof platformFeatures[0] }) => {
 
 export default function PlatformSection() {
   return (
-    <section id="platform" className="py-24 bg-[#080810] relative overflow-hidden">
+    <section id="platform" className="section-spacing bg-[#080810] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 mesh-primary opacity-70"></div>
       <div className="absolute inset-0 data-flow-bg opacity-20"></div>

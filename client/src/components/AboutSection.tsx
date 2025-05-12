@@ -3,7 +3,7 @@ import { Brain, Shield, TrendingUp, Database, Wifi, Lock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-[#080810] relative overflow-hidden">
+    <section id="about" className="section-spacing bg-[#080810] relative overflow-hidden">
       <div className="absolute inset-0 mesh-primary"></div>
       <div className="absolute inset-0 data-flow-bg opacity-30"></div>
       

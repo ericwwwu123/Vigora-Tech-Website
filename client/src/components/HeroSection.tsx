@@ -153,7 +153,7 @@ export default function HeroSection() {
   }, [windowSize]);
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden pt-16 grid-background">
+    <section id="home" className="relative h-screen overflow-hidden pt-20 grid-background">
       {/* Background canvas for animated particles and grid */}
       <canvas
         ref={canvasRef}
