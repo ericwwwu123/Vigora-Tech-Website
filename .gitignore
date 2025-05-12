@@ -1,6 +1,39 @@
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Production
 dist
-.DS_Store
+build
 server/public
-vite.config.ts.*
+
+# Testing
+coverage
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
 *.tar.gz
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
