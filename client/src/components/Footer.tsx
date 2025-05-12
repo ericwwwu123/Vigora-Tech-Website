@@ -21,7 +21,7 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-white">4</div>
+              <div className="text-2xl font-bold text-white">2</div>
               <div className="text-light-muted text-sm">Offices</div>
             </div>
             
@@ -29,7 +29,7 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-3">
                 <Globe className="h-6 w-6 text-secondary" />
               </div>
-              <div className="text-2xl font-bold text-white">24</div>
+              <div className="text-2xl font-bold text-white">3</div>
               <div className="text-light-muted text-sm">Countries</div>
             </div>
             
@@ -37,7 +37,7 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-3">
                 <Users className="h-6 w-6 text-accent" />
               </div>
-              <div className="text-2xl font-bold text-white">200+</div>
+              <div className="text-2xl font-bold text-white">5+</div>
               <div className="text-light-muted text-sm">Clients</div>
             </div>
             
@@ -156,19 +156,19 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h4 className="text-base font-semibold mb-4 text-secondary">Contact</h4>
+            <h4 className="text-base font-semibold mb-4 text-secondary">How to Reach Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
-                <MapPin className="h-4 w-4 text-primary mr-2 mt-1" />
-                <span className="text-light-muted">1234 Tech Parkway<br />San Francisco, CA 94105</span>
+                <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                <span className="text-light-muted">180 Friendship St, Providence, RI, 02903</span>
               </li>
-              <li className="flex items-center">
-                <Mail className="h-4 w-4 text-primary mr-2" />
-                <span className="text-light-muted">info@vigoratech.com</span>
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                <span className="text-light-muted">VigoraTech@hotmail.com</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-4 w-4 text-primary mr-2" />
-                <span className="text-light-muted">+1 (555) 123-4567</span>
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                <span className="text-light-muted">+1 (650) 727-4608</span>
               </li>
             </ul>
           </motion.div>
