@@ -35,15 +35,19 @@ export default defineConfig({
         main: path.resolve(__dirname, "client", "index.html"),
       },
       output: {
-        format: 'esm',
+        format: 'es',
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
         },
       },
     },
     chunkSizeWarningLimit: 1000,
+    target: 'esnext',
   },
   optimizeDeps: {
     include: ['lightningcss'],
+    esbuildOptions: {
+      target: 'esnext',
+    },
   },
 });
