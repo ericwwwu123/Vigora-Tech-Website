@@ -115,74 +115,7 @@ export default function AboutSection() {
           </div>
         </motion.div>
         
-        {/* Leadership section */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-2xl font-semibold mb-2">Our Team</h3>
-          <p className="text-light-muted max-w-2xl mx-auto">
-            Founded by AI and robotics specialists with experience at
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          {/* Expert logos/icons */}
-          <motion.div
-            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-            <div className="text-center">
-              <div className="font-bold text-primary">Former Google AI</div>
-              <div className="text-xs text-light-muted">Research</div>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-          >
-            <div className="text-center">
-              <div className="font-bold text-secondary">MIT</div>
-              <div className="text-xs text-light-muted">Computer Science</div>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-          >
-            <div className="text-center">
-              <div className="font-bold text-accent">Tesla Autopilot</div>
-              <div className="text-xs text-light-muted">Engineers</div>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            className="bg-[#0c0c14] p-4 rounded-lg flex items-center justify-center border border-primary/10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            <div className="text-center">
-              <div className="font-bold text-primary">NASA JPL</div>
-              <div className="text-xs text-light-muted">Robotics</div>
-            </div>
-          </motion.div>
-        </div>
+
       </div>
     </section>
   );
