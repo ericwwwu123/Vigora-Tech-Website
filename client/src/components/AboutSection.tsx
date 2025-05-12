@@ -28,7 +28,7 @@ export default function AboutSection() {
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            We build the digital nervous system for drones, logistics, and infrastructure.
+            We give machines the ability to understand and navigate the world.
           </h3>
         </motion.div>
         
@@ -44,9 +44,9 @@ export default function AboutSection() {
             <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
               <Database className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-primary mb-3">AI-Native Design</h3>
+            <h3 className="text-xl font-bold text-primary mb-3">Simple & Adaptable</h3>
             <p className="text-light-muted text-sm">
-              Infrastructure built from the ground up specifically for AI workloads, with optimized compute, memory, and network paths.
+              Systems that work out-of-the-box and adapt to changing environments without complex setup or maintenance.
             </p>
           </motion.div>
           
@@ -60,9 +60,9 @@ export default function AboutSection() {
             <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-secondary mb-6">
               <Lock className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-secondary mb-3">Security by Default</h3>
+            <h3 className="text-xl font-bold text-secondary mb-3">Privacy-Focused</h3>
             <p className="text-light-muted text-sm">
-              End-to-end encryption, access control, and regulatory compliance built into every layer of our platform.
+              We protect your data with strong security while processing information locally to minimize data exposure.
             </p>
           </motion.div>
           
@@ -76,9 +76,9 @@ export default function AboutSection() {
             <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center text-accent mb-6">
               <Wifi className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-accent mb-3">Scalability at Core</h3>
+            <h3 className="text-xl font-bold text-accent mb-3">Runs Anywhere</h3>
             <p className="text-light-muted text-sm">
-              Designed to adapt from single device deployments to global fleets with consistent performance and reliability.
+              Smart algorithms that work on everything from tiny drones to vehicles to edge devices, with minimal setup required.
             </p>
           </motion.div>
         </div>
@@ -123,9 +123,9 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-semibold mb-2">Backed by Experts</h3>
+          <h3 className="text-2xl font-semibold mb-2">Our Team</h3>
           <p className="text-light-muted max-w-2xl mx-auto">
-            Our team brings decades of experience from leading technology companies
+            Founded by AI and robotics specialists with experience at
           </p>
         </motion.div>
         

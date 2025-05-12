@@ -4,36 +4,36 @@ import { Plane, Truck, Building2, ArrowRight, Eye, Map, Battery, BarChart, Netwo
 // Solution card data - focused on 3 sectors only as requested
 const solutions = [
   {
-    title: "Drone Operations",
+    title: "Smart Drones",
     icon: <Plane className="text-primary" />,
     image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Autonomous fleet management with real-time coordination and intelligent navigation.",
+    description: "Making drones smarter without requiring heavy computing hardware or constant connectivity.",
     keyFeatures: [
-      { icon: <Eye className="text-secondary h-5 w-5" />, text: "Object detection & tracking" },
-      { icon: <Map className="text-secondary h-5 w-5" />, text: "Autonomous navigation" },
-      { icon: <Battery className="text-secondary h-5 w-5" />, text: "Power optimization" }
+      { icon: <Eye className="text-secondary h-5 w-5" />, text: "See and avoid obstacles" },
+      { icon: <Map className="text-secondary h-5 w-5" />, text: "Navigate autonomously" },
+      { icon: <Battery className="text-secondary h-5 w-5" />, text: "Extend battery life" }
     ]
   },
   {
-    title: "Smart Logistics",
+    title: "Delivery Solutions",
     icon: <Truck className="text-primary" />,
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Predictive supply chain optimization with AI-powered route planning and demand forecasting.",
+    description: "Helping delivery vehicles and warehouses operate more efficiently with simple cameras and sensors.",
     keyFeatures: [
-      { icon: <BarChart className="text-secondary h-5 w-5" />, text: "Demand forecasting" },
-      { icon: <Map className="text-secondary h-5 w-5" />, text: "Route optimization" },
-      { icon: <Timer className="text-secondary h-5 w-5" />, text: "Just-in-time delivery" }
+      { icon: <BarChart className="text-secondary h-5 w-5" />, text: "Track packages easily" },
+      { icon: <Map className="text-secondary h-5 w-5" />, text: "Find better routes" },
+      { icon: <Timer className="text-secondary h-5 w-5" />, text: "Deliver on time" }
     ]
   },
   {
-    title: "Urban Infrastructure",
+    title: "City Intelligence",
     icon: <Building2 className="text-primary" />,
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    description: "Real-time monitoring and control systems for smarter, more efficient urban environments.",
+    description: "Turning ordinary city cameras and sensors into smart monitoring systems without expensive hardware.",
     keyFeatures: [
-      { icon: <Network className="text-secondary h-5 w-5" />, text: "Traffic management" },
-      { icon: <Zap className="text-secondary h-5 w-5" />, text: "Energy optimization" },
-      { icon: <Eye className="text-secondary h-5 w-5" />, text: "Public safety" }
+      { icon: <Network className="text-secondary h-5 w-5" />, text: "Reduce traffic jams" },
+      { icon: <Zap className="text-secondary h-5 w-5" />, text: "Save energy" },
+      { icon: <Eye className="text-secondary h-5 w-5" />, text: "Improve public safety" }
     ]
   }
 ];

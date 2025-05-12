@@ -172,9 +172,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            <span className="text-secondary glow-text">Powering</span> AI Infrastructure for a
+            <span className="text-secondary glow-text">Lightweight</span> AI for the
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent">
-              {" Smarter World"}
+              {" Physical World"}
             </span>
           </h1>
           
@@ -184,7 +184,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            From aerial systems to urban intelligence — building the real-time AI layer for the physical world.
+            Helping machines see, understand, and adapt to real-world environments in real-time.
           </motion.p>
           
           <motion.div 
@@ -194,18 +194,18 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <button
-              onClick={() => scrollToSection("platform")}
+              onClick={() => scrollToSection("solutions")}
               className="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md hover:glow transition-all duration-300 text-center flex items-center justify-center"
             >
-              Explore Platform
+              See Use Cases
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             
             <button
-              onClick={() => scrollToSection("solutions")}
+              onClick={() => scrollToSection("platform")}
               className="px-6 py-3 bg-transparent border border-secondary text-secondary font-medium rounded-md hover:bg-secondary/10 transition-all duration-300 text-center"
             >
-              Industry Focus
+              Our Technology
             </button>
           </motion.div>
         </motion.div>
