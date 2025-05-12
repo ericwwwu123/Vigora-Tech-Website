@@ -52,7 +52,7 @@ export default function Navbar() {
             }}
             className="flex items-center"
           >
-            <img src={vigoraLogo} alt="Vigora Tech Logo" className="h-16 w-auto object-contain" />
+            <img src={vigoraLogo} alt="Vigora Tech Logo" className="h-20 w-auto object-contain" />
           </a>
           
           {/* Desktop Menu */}
