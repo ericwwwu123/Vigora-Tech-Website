@@ -161,7 +161,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h4 className="text-base font-semibold mb-4 text-secondary">How to Reach Us</h4>
+            <h4 className="text-base font-semibold mb-4 text-secondary">Our Office</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5" />
